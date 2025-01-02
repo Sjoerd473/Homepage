@@ -1,45 +1,41 @@
-
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 * {
-    margin: 0;
-    list-style: none;
+  margin: 0;
+  list-style: none;
 }
-
 
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    height: 100vh;
-    --fonts: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-family: var(--fonts);
-    --light-blue: rgb(43, 170, 255);
-    --nav-width: 80%
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  --fonts: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--fonts);
+  --light-blue: rgb(43, 170, 255);
+  --nav-width: 80%;
+  --light-grey-shadow: 5px 5px 5px black;
 }
-
 
 img,
 picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
-
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
-
 
 p,
 h1,
@@ -48,11 +44,55 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
-
 
 #root,
 #__next {
-    isolation: isolate;
+  isolation: isolate;
+}
+
+header{
+    background-color: greenyellow;
+    display: flex;
+    padding: 4rem;
+}
+
+.header-image{
+    position:relative;
+    max-width: 50%;
+    box-shadow: var(--light-grey-shadow);
+    
+}
+.header-image > img{
+    object-fit: contain;
+}
+.header-image >h1{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    
+}
+.header-container{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: var(--light-grey-shadow);
+    align-self: center;
+}
+
+.header-container p,h2{
+    margin:1rem;
+}
+.big_icons{
+    display:flex;
+    gap:1rem;
+    justify-content: end;
+    
+}
+
+.big_icons > svg{
+    width:1rem;
+    margin:5px;
+
 }
