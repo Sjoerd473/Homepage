@@ -12,11 +12,11 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  height: 100vh;
+  
   --fonts: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: var(--fonts);
-  --light-blue: rgb(43, 170, 255);
+  
   --nav-width: 80%;
   --light-grey-shadow: 5px 5px 5px black;
 }
@@ -51,14 +51,36 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
 header{
-    background-color: greenyellow;
+    filter: drop-shadow(0px 6px 3px rgba(50, 50, 0, 0.5));
+}
+.header-wrapper{
+  
+    
     display: flex;
     padding: 4rem;
+    margin:0;
+    /* background:lime; */
+    position:relative;
+    /* z-index: 1000; */
+    /* clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%); */
+    
 }
 
+.header-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index:-1;
+    background-color: blue;
+    clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+  }
+
 .header-image{
+    overflow: visible;
     position:relative;
     max-width: 50%;
     box-shadow: var(--light-grey-shadow);
@@ -84,7 +106,7 @@ header{
 .header-container p,h2{
     margin:1rem;
 }
-.big_icons{
+.big_icons, .tiny-icons{
     display:flex;
     gap:1rem;
     justify-content: end;
@@ -95,4 +117,36 @@ header{
     width:1rem;
     margin:5px;
 
+}
+
+.tiny-icons > svg{
+    width:0.8rem;
+    margin:5px;
+}
+
+.card_container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr) ) ;
+    gap:5%;
+}
+
+.card{
+    margin:50px;
+    box-shadow: var(--light-grey-shadow);
+    padding-block-end: 50px;
+}
+
+.card_title{
+    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.card_text > p{
+    margin:10px;
+    padding-block-end: 50px;
+}
+
+.bottom-image{
+    width:100px;
 }
