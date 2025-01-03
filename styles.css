@@ -16,9 +16,9 @@ body {
   --fonts: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: var(--fonts);
-  
+  --gradient-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,34,121,1) 35%, rgba(0,212,255,1) 100%);
   --nav-width: 80%;
-  --light-grey-shadow: 5px 5px 5px black;
+  --light-grey-shadow: 0px 6px 3px rgba(50, 50, 0, 0.5);
 }
 
 img,
@@ -60,10 +60,8 @@ header{
     display: flex;
     padding: 4rem;
     margin:0;
-    /* background:lime; */
     position:relative;
-    /* z-index: 1000; */
-    /* clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%); */
+
     
 }
 
@@ -75,7 +73,7 @@ header{
     left: 0;
     top: 0;
     z-index:-1;
-    background-color: blue;
+    background:var(--gradient-background);
     clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
   }
 
@@ -84,69 +82,139 @@ header{
     position:relative;
     max-width: 50%;
     box-shadow: var(--light-grey-shadow);
-    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 }
 .header-image > img{
     object-fit: contain;
 }
-.header-image >h1{
-    position:absolute;
-    bottom:50%;
-    left:50%;
-    
+
+.header-image::after{
+  content:'Mr. Penguin';
+  display:flex;
+  position:absolute;
+
+  font-size:4rem;
+  text-align: center;
 }
+
 .header-container{
     display:flex;
     flex-direction: column;
     background-color: white;
     box-shadow: var(--light-grey-shadow);
     align-self: center;
+    max-width: 70ch;
 }
 
 .header-container p,h2{
     margin:1rem;
 }
-.big_icons, .tiny-icons{
+
+h2{
+  font-weight: 900;
+  font-size:2rem;
+}
+
+.header-container p{
+  font-size: 1.25rem;
+}
+.big_icons{
     display:flex;
     gap:1rem;
     justify-content: end;
+    padding:2rem 1rem 2rem 1rem;
     
 }
 
 .big_icons > svg{
-    width:1rem;
-    margin:5px;
+    width:1.25rem;
+    
 
 }
+.big_icons_bottom > svg{
+  width:1.5rem;
+  
+}
 
-.tiny-icons > svg{
-    width:0.8rem;
-    margin:5px;
+.big_icons_bottom{
+  display:flex;
+    gap:1rem;
+    justify-content: start;
+    padding:2rem 1rem 2rem 1rem;
+}
+.tiny-icons{
+  display:flex;
+  gap:1rem;
+  
+  margin:5px;
+}
+.tiny-icons1 svg{
+    width:1.5rem;
+    display:inline;
+    fill:white;
+    vertical-align: center;
+    margin-inline-end: 10px;
 }
 
 .card_container{
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr) ) ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
     gap:5%;
+    padding-block-end: 5rem;
 }
 
 .card{
     margin:50px;
     box-shadow: var(--light-grey-shadow);
-    padding-block-end: 50px;
+    padding-block-end: 0px;
 }
+
+
+h3{
+  font-size: 1.5rem;
+  margin-inline-start: 0.5rem;
+}
+
 
 .card_title{
     display:flex;
+    flex-direction: row;
     justify-content: space-between;
-    margin: 10px;
+}
+.card_title svg{
+width:1.5rem;
 }
 
 .card_text > p{
     margin:10px;
     padding-block-end: 50px;
 }
+.footer-wrapper{
+  /* display:grid;
+  grid-template-columns: 0.8fr 1fr; */
+  display:flex;
+  flex-grow: 0;
+  background: var(--gradient-background);
+  color:white;
+}
 
+.footer-container{
+  padding-inline: 1rem;
+  padding-block:1rem;
+  margin:1rem;
+  height: 10%;
+}
 .bottom-image{
-    width:100px;
+    max-width: 750px;
+    object-fit: contain;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+}
+.footer-container p{
+  padding-block-end:1.5rem;
+  font-size: 1.25rem;
 }
