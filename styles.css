@@ -18,7 +18,7 @@ body {
   font-family: var(--fonts);
   --gradient-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,34,121,1) 35%, rgba(0,212,255,1) 100%);
   --nav-width: 80%;
-  --light-grey-shadow: 0px 6px 3px rgba(50, 50, 0, 0.5);
+  --light-grey-shadow: 0px 6px 3px rgba(50, 50, 0, 0.1);
 }
 
 img,
@@ -80,7 +80,10 @@ header{
 .header-image{
     overflow: visible;
     position:relative;
-    max-width: 50%;
+    max-width: 750px;
+    object-fit: contain;
+    padding-block: 2rem;
+    padding-inline: 1rem;
     box-shadow: var(--light-grey-shadow);
     display:flex;
     flex-direction: column;
@@ -95,7 +98,7 @@ header{
   content:'Mr. Penguin';
   display:flex;
   position:absolute;
-
+  
   font-size:4rem;
   text-align: center;
 }
@@ -107,6 +110,7 @@ header{
     box-shadow: var(--light-grey-shadow);
     align-self: center;
     max-width: 70ch;
+    
 }
 
 .header-container p,h2{
@@ -163,7 +167,7 @@ h2{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:1fr 1fr;
-    gap:5%;
+    
     padding-block-end: 5rem;
 }
 
@@ -217,4 +221,63 @@ width:1.5rem;
 .footer-container p{
   padding-block-end:1.5rem;
   font-size: 1.25rem;
+}
+
+@media (max-width: 1300px) {
+  .header-image{
+    display:inline-;
+  }
+}
+
+@media (max-width:500px) {
+  body, .header-container, .card_container, .footer-container, .footer-wrapper{
+    display:grid;
+    grid-template-columns: 1fr;
+  }
+  .bottom-image{
+    padding:0;
+  }
+
+  .tiny-icons1{
+    display:none;
+  }
+
+  .big_icons_bottom{
+    margin:auto;
+    
+  }
+
+  .big_icons_bottom > svg{
+    width:3rem;
+    margin-inline: 1rem;
+  }
+
+  .footer-container > h2{
+    font-size: 3rem;
+  }
+
+  .footer-container > p {
+    font-size: 2rem;
+  }
+  .card p{
+    font-size: 2rem;
+  }
+
+  .card h3 {
+    font-size: 3rem;
+  }
+  .card svg{
+    width:3rem;
+  }
+
+  h2{
+    text-align: center;
+  }
+  .header-container{
+    background: none;
+  }
+  .header-container img{
+    width:100%;
+    height:100%;
+  }
 }
